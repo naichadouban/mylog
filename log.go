@@ -18,12 +18,12 @@ var (
 	// application shutdown.
 	logRotator *rotator.Rotator
 
-	log     = backendLog.Logger("HCD")
+	Mainlog     = backendLog.Logger("HCD")
 	TESTlog = backendLog.Logger("TEST")
 )
 // subsystemLoggers maps each subsystem identifier to its associated logger.
 var subsystemLoggers = map[string]mlog.Logger{
-	"HCT":  log,
+	"HCT":  Mainlog,
 	"FSBE": TESTlog,
 }
 // initLogRotator initializes the logging rotater to write logs to logFile and

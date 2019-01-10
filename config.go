@@ -8,10 +8,10 @@ type Config struct {
 	DebugLevel string
 }
 
-func LoadConfig()*Config{
+func LoadConfig() *Config {
 	initLogRotator("./test.log")
 	setLogLevels(DebugLevel)
 	return &Config{
-		DebugLevel:DebugLevel,
+		DebugLevel: DebugLevel,
 	}
 }

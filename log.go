@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/btcsuite/btclog"
+	"github.com/naichadouban/mylog/mylog"
 	"os"
 )
 

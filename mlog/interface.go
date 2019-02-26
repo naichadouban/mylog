@@ -1,10 +1,8 @@
 // Copyright (c) 2013-2017 The btcsuite developers
-// Copyright (c) 2018 The Decred developers
-// // Copyright (c) 2018 The Hc developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package mlog
+package mylog
 
 // Logger is an interface which describes a level-based logger.  A default
 // implementation of Logger is implemented by this package and can be created

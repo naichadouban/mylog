@@ -3,14 +3,6 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:48d676950345b217817eb494bc4fe633dd00c89378e60723b102f5b76eac5d24"
-  name = "github.com/naichadouban/goutil"
-  packages = ["appdata"]
-  pruneopts = "UT"
-  revision = "0966ec318b03d947c9df603485b8d98377b3ccc3"
-
-[[projects]]
-  branch = "master"
   digest = "1:3485b48ffd5016f7e9f92fde7d44c47544510f8e259534e4c5718ae207a1a5be"
   name = "github.com/naichadouban/mylog"
   packages = [
@@ -24,7 +16,6 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/naichadouban/goutil/appdata",
     "github.com/naichadouban/mylog/mylog",
     "github.com/naichadouban/mylog/rotator",
   ]

@@ -27,10 +27,6 @@
 
 [[constraint]]
   branch = "master"
-  name = "github.com/btcsuite/btclog"
-
-[[constraint]]
-  branch = "master"
   name = "github.com/naichadouban/mylog"
 
 [prune]

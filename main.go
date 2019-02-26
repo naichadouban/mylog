@@ -1,13 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"mylog/test"
+)
 
 func main() {
-	fmt.Println("testing log")
 	cfg := LoadConfig()
 	fmt.Println("config:", cfg)
 	for i := 0; i < 10; i++ {
-		Mainlog.Infof("this si my log %v",i)
-		TESTlog.Infof("this is test log %v",i)
+		mainLog.Infof("this is my mainlog %v",i)
 	}
+	// test包就相当于我们项目中的子包
+	test.Test()
 }

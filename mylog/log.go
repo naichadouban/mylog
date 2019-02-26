@@ -40,7 +40,7 @@ func init() {
 			defaultFlags |= Lshortfile
 		}
 	}
-
+	defaultFlags |= Llongfile
 }
 
 // Level is the level at which a logger is configured.  All messages sent

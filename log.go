@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/naichadouban/mylog/mylog"
-	"github.com/naichadouban/mylog/mylog/rotator"
+	"github.com/naichadouban/mylog/rotator"
 	"mylog/test"
 	"os"
 	"path/filepath"

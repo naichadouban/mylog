@@ -11,6 +11,7 @@ import (
 	"strings"
 	"sync"
 )
+
 // nl is a byte slice containing a newline byte.  It is used to avoid creating
 // additional allocations when writing newlines to the log file.
 var nl = []byte{'\n'}
@@ -25,6 +26,7 @@ type Rotator struct {
 	tee       bool
 	wg        sync.WaitGroup
 }
+
 // New returns a new Rotator.  The rotator can be used either by reading input
 // from an io.Reader by calling Run, or writing directly to the Rotator with
 // Write.
@@ -52,6 +54,7 @@ func New(filename string, thresholdKB int64, tee bool, maxRolls int) (*Rotator, 
 		tee:       tee,
 	}, nil
 }
+
 // Run begins reading lines from the reader and rotating logs as necessary.  Run
 // should not be called concurrently with Write.
 //
@@ -115,6 +118,7 @@ func (r *Rotator) Write(p []byte) (n int, err error) {
 
 	return n, nil
 }
+
 // 无论是Run还是Write都需要调用rotate
 func (r *Rotator) rotate() error {
 	dir := filepath.Dir(r.filename)
@@ -176,6 +180,7 @@ func (r *Rotator) rotate() error {
 
 	return nil
 }
+
 // 压缩，rotator的时候调用
 func compress(name string) (err error) {
 	f, err := os.Open(name)

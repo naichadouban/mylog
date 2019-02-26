@@ -12,6 +12,7 @@ import (
 const (
 	maxRejectReasonLen = 250
 )
+
 var (
 	// backendLog is the logging backend used to create all subsystem loggers.
 	// The backend must not be used before the log rotator has been initialized,
@@ -24,22 +25,23 @@ var (
 
 	mainLog = backendLog.Logger("MAIN")
 	testLog = backendLog.Logger("TEST")
-
 )
 // logWriter 实现了io.Writer，同时向标准输出框和write-end pip(log rotator初始化的)输出。
 // TODO 也许可以用io.MultiWriter(writer1, writer2)实现
-type logWriter struct {}
-func (logWriter) Write(p []byte)(n int,err error){
+type logWriter struct{}
+
+func (logWriter) Write(p []byte) (n int, err error) {
 	os.Stdout.Write(p)
 	logRotator.Write(p)
-	return len(p),nil
+	return len(p), nil
 }
-func init(){
+func init() {
 	test.UseLogger(testLog)
 }
+
 // subsystemLoggers maps each subsystem identifier to its associated logger.
 var subsystemLoggers = map[string]mylog.Logger{
-	"TEST":testLog,
+	"TEST": testLog,
 }
 // initLogRotator initializes the logging rotater to write logs to logFile and
 // create roll files in the same directory.  It must be called before the
@@ -59,6 +61,7 @@ func initLogRotator(logFile string) {
 
 	logRotator = r
 }
+
 // setLogLevel sets the logging level for provided subsystem.  Invalid
 // subsystems are ignored.  Uninitialized subsystems are dynamically created as
 // needed.
@@ -74,6 +77,7 @@ func setLogLevel(subsystemID string, logLevel string) {
 	level, _ := mylog.LevelFromString(logLevel)
 	logger.SetLevel(level)
 }
+
 // 设置全部子系统的日志等级
 func setLogLevels(logLevel string) {
 	// Configure all sub-systems with the new logging level.  Dynamically
